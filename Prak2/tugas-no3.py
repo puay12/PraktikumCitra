@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 # membaca file gambar
 img = cv2.imread("girl.jpg")
