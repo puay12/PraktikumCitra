@@ -23,12 +23,6 @@ new_img1 = np.zeros((height, width, 3), np.uint8)
 new_img1 = img.copy()
 new_img1[135:146, 413:423] = (0, 255, 0)
 
-# menampilkan updated image
-# plt.figure()
-# plt.subplot(222)
-# plt.imshow(new_img1)
-# plt.title("Updated Image")
-
 # build an image with zero filled
 new_img2 = np.zeros((height, width, 3), np.uint8)
 new_img3 = np.zeros((height, width, 3), np.uint8)
