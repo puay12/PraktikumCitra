@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # membaca image
-img = cv2.imread("bg.jpg")
+img = cv2.imread("girl.jpg")
 # menampilkan ukuran dan struktur data image
 print("Ukuran gambar : ", img.shape)
 
