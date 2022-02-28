@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 
 # membaca file gambar
 img = cv2.imread("girl.jpg")
+# resize
+img = cv2.resize(img, (500, 500))
 
 # menampilkan ukuran dan struktur data image
 print("Ukuran gambar : ", img.shape)
