@@ -7,7 +7,6 @@ print("Tipe data gambar : ", img.dtype)
 
 # mengakses warna pixel BGR
 print(img[213,310])
-# copy dan set pixel BGR
 
 # menampilkan image
 cv2.imshow("img original : ", img)
