@@ -27,16 +27,19 @@ new_img1 = img.copy()
 new_img1[135:146, 413:423] = (0, 255, 0)
 
 # menampilkan updated image
-plt.figure()
-plt.subplot(222)
-plt.imshow(new_img1)
-plt.title("Updated Image")
+# plt.figure()
+# plt.subplot(222)
+# plt.imshow(new_img1)
+# plt.title("Updated Image")
 
 # build an image with zero filled
 new_img2 = np.zeros((height, width, 3), np.uint8)
 new_img3 = np.zeros((height, width, 3), np.uint8)
 new_img4 = np.zeros((height, width, 3), np.uint8)
 new_img5 = np.zeros((height, width, 3), np.uint8)
+new_img6 = np.zeros((height, width, 3), np.uint8)
+new_img7 = np.zeros((height, width, 3), np.uint8)
+new_img8 = np.zeros((height, width, 3), np.uint8)
 
 new_img1 = cv2.cvtColor(new_img1, cv2.COLOR_BGR2RGB)
 
@@ -47,7 +50,7 @@ for i in range(height):
             new_img2[i, j][k] = img[i, j][k]
 
 plt.figure()
-plt.subplot(223)
+plt.subplot(222)
 plt.imshow(new_img2)
 plt.title("Copied Image")
 new_img2 = cv2.cvtColor(new_img2, cv2.COLOR_BGR2RGB)
@@ -59,7 +62,7 @@ for i in range(height):
             new_img3[i, j][k] = img[height - 1 - i, j][k]
 
 plt.figure()
-plt.subplot(224)
+plt.subplot(223)
 plt.imshow(new_img3)
 plt.title("Horizontally Flipped Image")
 
@@ -70,7 +73,7 @@ for i in range(height):
             new_img4[i, j][k] = img[i, width - 1 - j][k]
 
 plt.figure()
-plt.subplot(225)
+plt.subplot(224)
 plt.imshow(new_img4)
 plt.title("Vertically Flipped Image")
 
@@ -81,6 +84,22 @@ for i in range(height):
             new_img5[i, j][k] = img[height - 1 - i, width - 1 - j][k]
 
 plt.figure()
-plt.subplot(226)
+plt.subplot(225)
 plt.imshow(new_img5)
 plt.title("Flipped Image")
+
+# rotate image
+new_img6 = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE) # 90 derajat searah jarum jam
+plt.figure()
+plt.subplot(226)
+plt.imshow(new_img6)
+plt.title("Clockwised Rotated Image")
+
+new_img7 = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE) # 90 derajat berlawanan jarum jam
+plt.figure()
+plt.subplot(227)
+plt.imshow(new_img7)
+plt.title("CounterClockwised Rotated Image")
+
+matrix = cv2.getRotationMatrix2D((cx, cy), 45, 1.0)
+affine = cv2.warpAffine(img, M, (width, height))
