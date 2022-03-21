@@ -7,6 +7,7 @@ from urllib3.connectionpool import xrange
 img = cv2.imread("girl.jpg")
 # resize
 img = cv2.resize(img, (500,500))
+img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
 ret, thresh1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 ret, thresh2 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
