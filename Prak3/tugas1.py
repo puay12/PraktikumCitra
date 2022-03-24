@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # membaca data image
-img = cv2.imread("kabah.jpg")
+img = cv2.imread("koala.jpg")
 # resize
 img = cv2.resize(img, (700, 500))
 # copy
