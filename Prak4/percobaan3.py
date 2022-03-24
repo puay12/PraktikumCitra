@@ -4,9 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # membaca img
-img = cv2.imread('girl.jpg')
+img = cv2.imread('apple.jpg')
 # resize
-img = cv2.resize(img, (500, 500))
+# img = cv2.resize(img, (500, 500))
 
 height, width = img.shape[0], img.shape[1]
 

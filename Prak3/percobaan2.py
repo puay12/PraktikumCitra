@@ -1,7 +1,7 @@
 import cv2
 
 # membaca data image
-img = cv2.imread("girl.jpg")
+img = cv2.imread("cat.jpg")
 # resize
 img = cv2.resize(img, (500,500))
 

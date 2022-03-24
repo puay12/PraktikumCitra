@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # membaca gambar
-img = cv2.imread('girl.jpg')
+img = cv2.imread('apple.jpg')
 # resize
 img = cv2.resize(img, (500, 500))
 # coloring

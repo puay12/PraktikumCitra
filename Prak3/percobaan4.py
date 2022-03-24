@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from urllib3.connectionpool import xrange
 
 # membaca data image
-img = cv2.imread("girl.jpg")
+img = cv2.imread("cat.jpg")
 # resize
 img = cv2.resize(img, (500,500))
 img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)

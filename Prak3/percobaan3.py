@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # membaca data image
-img = cv2.imread("girl.jpg")
+img = cv2.imread("cat.jpg")
 # resize
 img = cv2.resize(img, (500,500))
 # split ke abu" masing" channel
