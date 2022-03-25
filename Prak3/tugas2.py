@@ -1,21 +1,24 @@
 import cv2
 import matplotlib.pyplot as plt
+from urllib3.connectionpool import xrange
 
 # membaca data image
-img = cv2.imread("dark.jpg")
-# resize
-img = cv2.resize(img, (500,500))
-img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv2.imread("kabah.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-ret, thres0 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-thres1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 3, 5)
-thres2 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 3, 5)
+b, g, r, il_rata, il_min, il_max, binar, binar_inv, trunc, tozero, tozero_inv= img.copy()
 
-titles = ["Original Image", "Global Thresholding (v = 127)", "Adaptive Mean Thresholding", "Adaptive Gaussian Thresholding"]
-images = [img, thres0, thres1, thres2]
+ret, thresh1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+ret, thresh2 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
+ret, thresh3 = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)
+ret, thresh4 = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO)
+ret, thresh5 = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO_INV)
 
-for i in range(4) :
-    plt.subplot(2, 2, i+1), plt.imshow(images[i], "gray")
+titles = ["Original Image", "BINARY", "BINARY_INV", "TRUNC", "TOZERO", "TOZERO_INV"]
+images = [img, thresh1, thresh2, thresh3, thresh4, thresh5]
+
+for i in xrange(6) :
+    plt.subplot(2, 3, i+1), plt.imshow(images[i], "gray")
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
 plt.show()

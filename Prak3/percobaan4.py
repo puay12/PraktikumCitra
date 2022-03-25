@@ -20,6 +20,3 @@ for i in xrange(6) :
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
 plt.show()
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
