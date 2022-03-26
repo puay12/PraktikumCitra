@@ -1,7 +1,5 @@
 # KUANTISASI CITRA
 import cv2
-from cv2 import COLOR_BGR2RGB
-from cv2 import COLOR_BGR2GRAY
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,7 +8,7 @@ img = cv2.imread('apple.jpg')
 # resize
 img = cv2.resize(img, (500, 500))
 # coloring
-img = cv2.cvtColor(img, COLOR_BGR2GRAY)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 img_gray = 128 * np.floor(img/128)
 gray1 = img_gray

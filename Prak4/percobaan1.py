@@ -5,7 +5,7 @@ import numpy as np
 # membaca gambar
 img = cv2.imread('apple.jpg')
 # resize
-img = cv2.resize(img, (700, 500))
+img = cv2.resize(img, (600, 500))
 height, width = img.shape[0], img.shape[1]
 
 new_img = np.zeros((height, width, 3), np.uint8)

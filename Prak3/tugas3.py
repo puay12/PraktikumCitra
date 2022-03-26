@@ -8,8 +8,8 @@ img = cv2.resize(img, (500,500))
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 ret, thres0 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-thres1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 3, 5)
-thres2 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 3, 5)
+thres1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 5)
+thres2 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 9, 5)
 
 titles = ["Original Image", "Global Thresholding (v = 127)", "Adaptive Mean Thresholding", "Adaptive Gaussian Thresholding"]
 images = [img, thres0, thres1, thres2]
