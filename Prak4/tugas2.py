@@ -1,6 +1,4 @@
 import cv2
-from cv2 import COLOR_BGR2RGB
-from cv2 import COLOR_BGR2GRAY
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,8 +8,8 @@ img = cv2.imread('apple.jpg')
 height, width = img.shape[0], img.shape[1]
 
 # color
-img = cv2.cvtColor(img, COLOR_BGR2RGB)
-gray_induk = cv2.cvtColor(img, COLOR_BGR2GRAY)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+gray_induk = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 color1 = img.copy()
 color2 = img.copy()
 color3 = img.copy()

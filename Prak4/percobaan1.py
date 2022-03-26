@@ -17,7 +17,7 @@ for i in range(height):
             if img[i, j][k] < 128:
                 gray = 0
             else:
-                gray = 129
+                gray = 128
             new_img[i, j][k] = np.uint8(gray)
 
 # show image
