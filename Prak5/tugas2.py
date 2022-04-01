@@ -1,23 +1,23 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
-img = cv2.imread('sometin.jpg',0)
-img = cv2.resize(img, (700, 500))
+img = cv2.imread('sunset.jpg')
 
-# gamma = 10
-img1 = 1 * np.exp(img, 10)
-img1 = np.uint8(img1)
-# gamma = 8
-img2 = 1 * np.exp(img, 8)
-img2 = np.uint8(img1)
-# gamma = 6
-img3 = 1 * np.exp(img, 6)
-img3 = np.uint8(img1)
+# gamma = 2.2
+img1 = cv2.cvtColor(np.array(255*(img/255)**2.2, dtype='uint8'), cv2.COLOR_BGR2RGB)
+# gamma = 0.4
+img2 = cv2.cvtColor(np.array(255*(img/255)**0.4, dtype='uint8'), cv2.COLOR_BGR2RGB)
+# gamma = 1.4
+img3 = cv2.cvtColor(np.array(255*(img/255)**1.4, dtype='uint8'), cv2.COLOR_BGR2RGB)
 
-cv2.imshow("Original Image", img)
-cv2.imshow("Gamma = 10", img1)
-cv2.imshow("Gamma = 8", img2)
-cv2.imshow("Gamma = 6", img3)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+titles = ["Original Image", "Gamma = 2.2", "Gamma = 0.4", "Gamma = 1.4"]
+images = [img, img1, img2, img3]
+
+for i in range(4):
+    plt.subplot(2, 2, i+1), plt.imshow(images[i])
+    plt.title(titles[i])
+    plt.axis('off')
+plt.show()
