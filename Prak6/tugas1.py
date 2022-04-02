@@ -41,8 +41,3 @@ plt.axis('off')
 plt.title("Enhanced")
 plt.imshow(img1)
 plt.show()
-
-# cv2.imshow("Original", img)
-# cv2.imshow("Enhanced", img1)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
