@@ -6,8 +6,8 @@ img = cv2.resize(img, (400, 600))
 kernel = np.ones((7, 7), np.float32) / 49
 dst_blur = cv2.filter2D(img, -1, kernel)
 
-kernel_v = np.array([[1, 0 , -1], [2, 0, -2], [1, 0, -1]])
-kernel_h = np.transpose(kernel_v)
+kernel_v = np.array([[-1, -0.5 , 0], [-0.5, 1, 0.5], [0, 0.5, 1]])
+kernel_h = np.array([[-1, -0.5 , 0], [-0.5, 1, 0.5], [0, 0.5, 1]])
 dst_h = cv2.filter2D(img, -1, kernel_h)
 dst_v = cv2.filter2D(img, -1, kernel_v)
 dst_edge = cv2.add(dst_v, dst_h)

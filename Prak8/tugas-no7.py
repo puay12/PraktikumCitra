@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
 img = cv2.imread("flower.jpg", 0)
-img = cv2.resize(img, (400, 600))
 
 kernel1 = np.ones([5, 5], np.float32) / 25
 img_blur = cv2.filter2D(img, -1, kernel1)
@@ -15,7 +15,15 @@ img_edge = np.uint8(img_edge)
 
 img_sharp = cv2.add(img_blur, img_edge)
 
-cv2.imshow("Original", img)
-cv2.imshow("Sharpeness", img_sharp)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+img_sharp = cv2.cvtColor(img_sharp, cv2.COLOR_BGR2RGB)
+img_edge = cv2.cvtColor(img_edge, cv2.COLOR_BGR2RGB)
+
+images = [img, img_sharp]
+titles = ["Original", "Sharp"]
+
+for i in range(2):
+    plt.subplot(1, 2, i+1), plt.imshow(images[i])
+    plt.axis('off')
+    plt.title(titles[i])
+plt.show()
