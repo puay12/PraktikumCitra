@@ -12,9 +12,9 @@ kernel2b = np.transpose(kernel2a)
 kernel2 = kernel2a + kernel2b
 img_edge = 0.5 * cv2.filter2D(img, -1, kernel2)
 img_edge = np.uint8(img_edge)
-img_blurs = np.add(img_blur, img_blur)
+img_edges = np.add(img_edge, img_edge)
 
-img_sharp = cv2.add(img_blurs, img_edge)
+img_sharp = cv2.add(img_blur, img_edges)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_sharp = cv2.cvtColor(img_sharp, cv2.COLOR_BGR2RGB)
