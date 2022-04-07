@@ -18,12 +18,15 @@ img_inverse = 255 - dst_edge
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_inverse = cv2.cvtColor(img_inverse, cv2.COLOR_BGR2RGB)
+dst_blur = cv2.cvtColor(dst_blur, cv2.COLOR_BGR2RGB)
+dst_edge = cv2.cvtColor(dst_edge, cv2.COLOR_BGR2RGB)
+img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
-images = [img, img_inverse]
-titles = ["Original", "Sharp"]
+images = [img, dst_blur, dst_edge, img2, img_inverse]
+titles = ["Original", "Image Blur", "Image Edge", "Sharp", "Sketsa"]
 
-for i in range(2):
-    plt.subplot(1, 2, i+1), plt.imshow(images[i])
+for i in range(5):
+    plt.subplot(2, 3, i+1), plt.imshow(images[i])
     plt.axis('off')
     plt.title(titles[i])
 plt.show()
